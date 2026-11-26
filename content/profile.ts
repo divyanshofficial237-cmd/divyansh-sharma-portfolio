@@ -10,7 +10,7 @@ export const profile = {
   heroTitle: "Hi, I'm Divyansh Sharma.",
   heroSubtitle: "I build AI-powered products, web applications, and developer tools. Currently pursuing BCA while building products, participating in hackathons, and exploring production AI systems.",
   
-  bio: "I am a developer who loves the process of turning ideas into functional, production-ready software. My journey started with standard web development, but quickly evolved into building with AI, exploring LLM orchestrations, and creating tools that solve real problems.",
+  bio: "I am a developer focused on engineering production-ready AI systems and full-stack applications. My work spans LLM applications, RAG architectures, agentic workflows, and evaluation systems. I enjoy going beyond basic AI integrations to understand how these systems can become reliable, measurable, and scalable software.",
   
   experience: [
     {
@@ -38,14 +38,16 @@ export const profile = {
       techIcons: ["Next.js", "TypeScript", "React", "Node.js", "FastAPI", "Supabase", "Firebase", "MySQL"]
     },
     {
-      title: "Full Stack AI Developer",
-      company: "Freelance / Projects",
-      period: "2026",
-      description: "Leveled up into AI-powered product development — building agentic systems, RAG pipelines, and production-ready LLM integrations.",
+      title: "Applied AI Engineer",
+      company: "Independent Projects / Open Source",
+      period: "2026 – Present",
+      description: "Developing production-oriented AI systems, moving beyond basic LLM integrations into retrieval engineering, agent orchestration, evaluation, and reliability.",
       bullets: [
-        "Built RAG pipelines with vector databases for semantic search and retrieval",
-        "Designed multi-step agentic workflows using LangGraph and LangChain",
-        "Integrated LLMs into production apps with observability via LangSmith"
+        "Built and developed Production-RAG, an extensible, open-source RAG framework.",
+        "Designed multi-step agentic workflows using LangGraph and LangChain.",
+        "Worked on LLM evaluation and benchmarking to measure output quality, consistency, and reliability.",
+        "Integrated LLM observability and tracing using LangSmith.",
+        "Explored guardrails, agent harness design, and the engineering practices needed for reliable AI applications."
       ],
       techIcons: ["LangChain", "LangGraph", "LangSmith", "OpenAI API", "Vector Databases", "FastAPI", "Docker", "n8n"]
     }
@@ -68,12 +70,13 @@ export const profile = {
   ],
   
   skills: {
-    languages: ["TypeScript", "Python", "JavaScript"],
-    frontend: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    backend: ["Node.js", "FastAPI", "Express.js", "Socket.io"],
-    database: ["MySQL", "Supabase", "Firebase"],
-    ai: ["OpenAI API", "LangChain", "LangGraph", "Gemini API", "Pinecone", "ChromaDB"],
-    tools: ["Git", "Docker", "n8n"]
+    Languages: ["TypeScript", "Python", "JavaScript"],
+    Frontend: ["React", "Next.js", "Tailwind CSS", "Shadcn UI", "Figma"],
+    Backend: ["Node.js", "FastAPI", "Express.js", "REST APIs"],
+    Databases: ["MySQL", "Supabase", "Firebase", "PostgreSQL", "MongoDB"],
+    "AI Engineering": ["OpenAI API", "Gemini API", "LangChain", "LangGraph", "LangSmith", "Qdrant", "Scikit-Learn", "Pydantic", "Hugging Face"],
+    Retrieval: ["Pinecone", "ChromaDB"],
+    Infrastructure: ["Docker", "Git", "n8n", "Vercel"],
   },
   
   interests: [
@@ -90,11 +93,11 @@ export const profile = {
   },
   
   now: {
-    building: "AI-powered SaaS tools — products that bring real LLM capabilities to users without them needing to understand the tech behind it. The goal is shipping things people actually use.",
-    learning: "One layer above basic RAG — advanced retrieval strategies, evaluation frameworks (evals), and agent harnesses. Currently going deep on how to make AI systems measurable and production-reliable.",
-    reading: "Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable — a research paper on structuring agent harnesses for real-world maintainability.",
+    building: "Building AI-powered products and full-stack applications, focusing on turning LLM capabilities into useful, production-ready software.",
+    learning: "Going deeper into AI systems engineering — evaluation frameworks, agent harnesses, observability, guardrails and reliable agent architectures.",
+    reading: "Harness Handbook — exploring how to make evolving agent harnesses readable, navigable and maintainable.",
     readingUrl: "https://huggingface.co/papers/2607.13285",
-    exploring: ["Multi-agent orchestration", "Real-time collaboration systems", "Edge computing"],
-    goal: "Build a growing user base around my AI tools — real people solving real problems with what I ship. Every new active user is a signal that the product actually works."
+    exploring: ["LLM Inference", "Model Serving", "MCP", "Agent Reliability", "Inference Optimization"],
+    goal: "Become a strong AI engineer capable of building, evaluating and optimizing AI systems at production scale, with a long-term focus on inference engineering."
   }
 };

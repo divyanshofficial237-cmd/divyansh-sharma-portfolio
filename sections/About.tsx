@@ -1,11 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
 import { profile } from "@/content/profile";
 import { Container } from "@/components/Container";
 import { TechIcon } from "@/components/TechIcons";
 
 export function About() {
+  const categories = ["All", ...Object.keys(profile.skills)];
+  const [active, setActive] = useState("All");
+
+  const visibleSkills =
+    active === "All"
+      ? Object.values(profile.skills).flat()
+      : profile.skills[active as keyof typeof profile.skills] ?? [];
+
   return (
     <section id="about" className="py-20">
       <Container>
@@ -40,7 +49,6 @@ export function About() {
                       ))}
                     </ul>
                   )}
-                  {/* Tech icons per experience */}
                   {exp.techIcons && (
                     <div className="flex flex-wrap gap-2 mt-3">
                       {exp.techIcons.map((tech) => (
@@ -85,21 +93,43 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h2 className="text-xl font-bold tracking-tight mb-8">Skills</h2>
-            <div className="space-y-4">
-              {Object.entries(profile.skills).map(([category, items]) => (
-                <div key={category} className="flex gap-6">
-                  <span className="text-xs text-muted-foreground w-20 flex-shrink-0 pt-1.5 capitalize">{category}</span>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill) => (
-                      <span key={skill} className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1 text-xs">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <h2 className="text-xl font-bold tracking-tight mb-6">Skills</h2>
+
+            {/* Filter tabs */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
+                    active === cat
+                      ? "bg-foreground text-background border-foreground"
+                      : "border-border/60 text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                  }`}
+                >
+                  {cat}
+                </button>
               ))}
             </div>
+
+            {/* Pills grid */}
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-wrap gap-2"
+            >
+              {visibleSkills.map((skill) => (
+                <div
+                  key={skill}
+                  className="flex items-center gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 py-2 text-xs font-medium"
+                >
+                  <TechIcon name={skill} size={16} />
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
         </div>

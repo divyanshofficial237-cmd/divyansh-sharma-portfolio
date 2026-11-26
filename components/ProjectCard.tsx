@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons";
@@ -22,11 +23,20 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link href={`/projects/${project.slug}`}>
         <GlassCard className="group h-full p-8">
-          {/* Project Image Placeholder */}
+          {/* Project Screenshot */}
           <div className="relative mb-6 aspect-video overflow-hidden rounded-xl bg-muted">
-            <div className="absolute inset-0 flex items-center justify-center text-sm text-muted-foreground">
-              {project.screenshot}
-            </div>
+            {project.screenshot ? (
+              <Image
+                src={project.screenshot}
+                alt={project.title}
+                fill
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center text-sm text-muted-foreground">
+                {project.title}
+              </div>
+            )}
           </div>
 
           {/* Year & Status Badge */}

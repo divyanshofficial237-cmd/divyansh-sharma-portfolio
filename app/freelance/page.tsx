@@ -1,9 +1,15 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const freelanceProjects = [
+  {
+    name: "TH Technologies — The Hub",
+    description: "AI-native software studio website covering web engineering, AI agents, bots, mobile apps, and backend APIs.",
+    url: "https://www.thtechnologies.in/",
+  },
   {
     name: "Jesse Cameraman",
     description: "Portfolio website for a professional cameraman.",
@@ -33,6 +39,14 @@ export default function FreelancePage() {
       <main className="pt-28 pb-20">
         <Container>
           <div className="max-w-2xl mx-auto">
+
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back
+            </Link>
 
             <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-6">
               Freelance Work

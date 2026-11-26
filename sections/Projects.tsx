@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ExternalLink, ArrowRight } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 import { TechIcon } from "@/components/TechIcons";
 import { projects } from "@/content/projects";
 import { Container } from "@/components/Container";
@@ -59,16 +60,25 @@ export function Projects() {
                     <span className="text-sm font-semibold group-hover:text-primary transition-colors">
                       {project.title}
                     </span>
-                    <div className="flex items-center gap-2" onClick={(e) => e.preventDefault()}>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                    <div className="flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
+                      {project.githubUrl && (
+                        <button
+                          type="button"
+                          onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
+                          className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                          aria-label="GitHub repository"
+                        >
+                          <GithubIcon className="h-4 w-4" />
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+                        className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                         aria-label="Live site"
                       >
                         <ExternalLink className="h-4 w-4" />
-                      </a>
+                      </button>
                     </div>
                   </div>
 
@@ -80,7 +90,7 @@ export function Projects() {
                   {/* Award badge */}
                   {project.slug === "fraudlens" && (
                     <p className="text-xs text-amber-500 dark:text-amber-400 font-medium mb-4 flex items-center gap-1">
-                      🏆 Best Presentation Award
+                      🏆 Hackathon winning
                     </p>
                   )}
 

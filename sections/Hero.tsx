@@ -11,10 +11,10 @@ import { TechStackIcons } from "@/components/TechIcons";
 import { useState, useEffect } from "react";
 
 const roles = [
-  "GenAI Engineer",
-  "Full Stack AI Engineer", 
-  "Full Stack Developer",
-  "RAG Engineer"
+  "Applied AI Engineer",
+  "LLM Systems Engineer",
+  "Full Stack AI Engineer",
+  "RAG & Evaluation Engineer"
 ];
 
 export function Hero() {
